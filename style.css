@@ -1,0 +1,182 @@
+:root
+{
+    --clr-primary-600: hsl(169, 82%, 27%);
+    --clr-primary-400: hsl(0, 66%, 56%);
+    --clr-primary-200: hsl(148, 38%, 91%);
+
+    --clr-neutral-900:hsl(187, 24%, 22%);
+    --clr-neutral-500: hsl(160, 80%, 80%);
+    --clr-neutral-200: hsl(0, 0%, 100%);
+
+    --fs-body: 1rem;
+
+    --fw-700: 700;
+    --fw-400: 400;
+
+    --ff-karla: 'Karla', sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: var(--fs-body);
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/* === Utilities CSS === */
+
+.txt-primary-600{ color: var(--clr-primary-600);}
+.txt-primary-400{ color: var(--clr-primary-400);}
+.txt-primary-200{ color: var(--clr-primary-200);}
+
+.bg-primary-600{ background-color: var(--clr-primary-600);}
+.bg-primary-400{ background-color: var(--clr-primary-400);}
+.bg-primary-200{ background-color: var(--clr-primary-200);}
+.bg-neutral-500{ background-color: var(--clr-neutral-500);}
+.bg-neutral-200{ background-color: var(--clr-neutral-200);}
+
+.fs-body { font-size: var(--fs-body);}
+
+.fw-700 { font-weight: var(--fw-700);}
+.fs-400 { font-weight: var(--fw-400);}
+
+/* === Styling CSS === */
+
+main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper-main
+{
+    width: 50rem;
+    padding: 4rem;
+    border-radius: var(--border);
+    --border: 2rem;
+    --border-input: .8rem;
+}
+
+.title-col
+{
+    display: flex;
+}
+
+.col
+{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.inner-col
+{
+    display: flex;
+    flex: 1 1;
+    margin-block: .5rem;
+    flex-direction: column;
+}
+
+.inner-col input
+{
+    height: 2rem;
+    border-radius: var(--border-input);
+    border: 1px solid var(--clr-neutral-900);
+    margin-top: .4rem;
+}
+
+#message
+{
+    height: 6rem;
+}
+
+.col button
+{
+    width: 100%;
+    height: 4rem;
+    border-radius: var(--border-input);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.wrapper-main > :nth-child(5 of .col)
+{
+    justify-self: center;
+    margin-block: 1.5rem;
+}
